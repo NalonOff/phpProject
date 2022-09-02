@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;70;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+  color: white;
+}
+
+
+/*Animated Background*/
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bubbles {
+  position: relative;
+  display: inline-flex;
+}
+.bubbles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #ccc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0px,
+  0 0 50px #ccc,
+  0 0 100px #ccc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(200s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+  background: #bdbdbd;
+  box-shadow: 0 0 0 0px #bdbdbd44,
+  0 0 50px #bdbdbd,
+  0 0 100px #bdbdbd;
+}
+
+@keyframes animate {
+  0%
+  {
+    transform: translateY(100vh) scale(0);
+  }
+  100%
+  {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+/*Coms's Card*/
+.comCard {
+  position: absolute;
+  left: 4%;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: inline-block;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.comCard .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.comCard .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #902B90, #fff);
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.comCard:hover .circle:before{
+  background: skyblue;
+  clip-path: circle(400px at center);
+}
+
+.comCard img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 128px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.comCard:hover img {
+  left: 80%;
+  height: 192px;
+}
+
+.comCard .content {
+  position: relative;
+  width: 65%;
+  left: 20%;
+  padding: 20px 20px 20px 35px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.comCard:hover .content {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.comCard .content h2 {
+  color: #fff;
+  font-size: 2em;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.comCard .content p {
+  color: #fff;
+}
+
+.comCard .content a {
+  color: #fff;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/*Like's Card*/
+.likeCard {
+  position: absolute;
+  left: 35%;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: inline-block;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.likeCard .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.likeCard .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #902B90, #fff);
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.likeCard:hover .circle:before{
+  background: skyblue;
+  clip-path: circle(400px at center);
+}
+
+.likeCard img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 128px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.likeCard:hover img {
+  left: 80%;
+  height: 192px;
+}
+
+.likeCard .content {
+  position: relative;
+  width: 65%;
+  left: 20%;
+  padding: 20px 20px 20px 35px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.likeCard:hover .content {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.likeCard .content h2 {
+  color: #fff;
+  font-size: 2em;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.likeCard .content p {
+  color: #fff;
+}
+
+.likeCard .content a {
+  color: #fff;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/*Follower's card*/
+.followerCard {
+  position: absolute;
+  left: 65%;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: inline-block;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.followerCard .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.followerCard .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #902B90, #fff);
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.followerCard:hover .circle:before{
+  background: skyblue;
+  clip-path: circle(400px at center);
+}
+
+.followerCard img {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  height: 128px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.followerCard:hover img {
+  left: 80%;
+  height: 192px;
+}
+
+.followerCard .content {
+  position: relative;
+  width: 65%;
+  left: 20%;
+  padding: 20px 20px 20px 35px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.followerCard:hover .content {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.followerCard .content h2 {
+  color: #fff;
+  font-size: 2em;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.followerCard .content p {
+  color: #fff;
+}
+
+.followerCard .content a {
+  color: #fff;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
